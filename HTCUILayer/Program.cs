@@ -11,19 +11,8 @@ namespace HTCUILayer
     {
         static void Main(string[] args)
         {
-            Menu menu = new Menu();
-            Customer cusObj = new Customer();
-            Console.Clear();
-            //Console.WriteLine(menu.DeleteItem("F1001"));
-            //Console.WriteLine(cusObj.AddCustomer("Aquib Jawed", "7004632163", "Bangalore,India",1));
-           
-            List<string> list = cusObj.GetCustomerDetailUsingNumber("7004632163");
-
-            foreach(var item in list)
-            {
-                Console.WriteLine(item);
-            }
-
+            CafeUI mainObj = new CafeUI();
+            mainObj.MainMenu();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace HTCUILayer
         string customerAddress;
         int customerVisitCount;
         Customer cusObj = new Customer();
+        Menu mObj = new Menu();
 
         public void MainMenu()
         {
@@ -99,7 +100,7 @@ namespace HTCUILayer
 
             Console.WriteLine("1.Add Menu\n2.Update Menu\n3.Delete Menu\n4.Main menu");
 
-            authenticationNumber == Convert.ToInt32(Console.ReadLine());
+            authenticationNumber = Convert.ToInt32(Console.ReadLine());
 
             if(authenticationNumber == 1)
             {
@@ -119,8 +120,31 @@ namespace HTCUILayer
         public void AddMenu()
         {
             Console.Clear();
+            Console.WriteLine("Please enter the itemId");
+            string itemId = Console.ReadLine();
 
-            //Console.WriteLine("1.itemId\n2.itemName\n\3.item")
+            Console.WriteLine("Please enter the itemName");
+            string itemName = Console.ReadLine();
+
+            Console.WriteLine("Please enter the itemDescription");
+            string itemDescription = Console.ReadLine();
+
+            Console.WriteLine("Please enter the itemTax");
+            int itemTax = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the itemPrice");
+            int itemPrice = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the itemDiscount");
+            int itemDiscount = Convert.ToInt32(Console.ReadLine());
+
+            mObj.AddItem(itemId, itemName, itemDescription, itemTax, itemPrice, itemDiscount);
+
+        }
+
+        public void UpdateMenu()
+        {
+            Console.Clear();
         }
     }
 }
