@@ -14,9 +14,9 @@ namespace HTCDataAccessLayer
     {
         SqlConnection sqlConObj;
         SqlCommand cmdObj;
+        SqlDataReader drCustomer;
 
-        public string AddCustomer(string customerName, long customerNumber, string customerAddress, int customerVisitCount)
-
+        public string AddCustomer(string customerName, string customerNumber, string customerAddress, int customerVisitCount)
         {
             sqlConObj = new SqlConnection(ConfigurationManager.ConnectionStrings["connString"].ToString());
             sqlConObj.Open();
@@ -24,7 +24,7 @@ namespace HTCDataAccessLayer
             cmdObj.CommandType = CommandType.StoredProcedure;
 
             cmdObj.Parameters.Add(new SqlParameter("@customerName", SqlDbType.VarChar)).Value = customerName;
-            cmdObj.Parameters.Add(new SqlParameter("@customerNumber", SqlDbType.Int)).Value = customerNumber;
+            cmdObj.Parameters.Add(new SqlParameter("@customerNumber", SqlDbType.VarChar)).Value = customerNumber;
             cmdObj.Parameters.Add(new SqlParameter("@customerAddress", SqlDbType.VarChar)).Value = customerAddress;
             cmdObj.Parameters.Add(new SqlParameter("@customerVisitCount", SqlDbType.Int)).Value = customerVisitCount;
 
@@ -43,7 +43,7 @@ namespace HTCDataAccessLayer
             }
         }
 
-        public string UpdateCustomer(string customerName, int customerNumber, string customerAddress, int customerVisitCount)
+        public string UpdateCustomer(string customerName, string customerNumber, string customerAddress, int customerVisitCount)
         {
             sqlConObj = new SqlConnection(ConfigurationManager.ConnectionStrings["connString"].ToString());
             sqlConObj.Open();
@@ -51,7 +51,7 @@ namespace HTCDataAccessLayer
             cmdObj.CommandType = CommandType.StoredProcedure;
 
             cmdObj.Parameters.Add(new SqlParameter("@customerName", SqlDbType.VarChar)).Value = customerName;
-            cmdObj.Parameters.Add(new SqlParameter("@customerNumber", SqlDbType.Int)).Value = customerNumber;
+            cmdObj.Parameters.Add(new SqlParameter("@customerNumber", SqlDbType.VarChar)).Value = customerNumber;
             cmdObj.Parameters.Add(new SqlParameter("@customerAddress", SqlDbType.VarChar)).Value = customerAddress;
             cmdObj.Parameters.Add(new SqlParameter("@customerVisitCount", SqlDbType.Int)).Value = customerVisitCount;
 
@@ -73,7 +73,7 @@ namespace HTCDataAccessLayer
 
         }
 
-        public string DeleteCustomer(int customerNumber)
+        public string DeleteCustomer(string customerNumber)
         {
 
             sqlConObj = new SqlConnection(ConfigurationManager.ConnectionStrings["connString"].ToString());
@@ -81,7 +81,7 @@ namespace HTCDataAccessLayer
             cmdObj = new SqlCommand("[dbo].[uspDeleteCustomer]", sqlConObj);
             cmdObj.CommandType = CommandType.StoredProcedure;
 
-            cmdObj.Parameters.Add(new SqlParameter("@itemId", SqlDbType.Int)).Value = customerNumber;
+            cmdObj.Parameters.Add(new SqlParameter("@customerNumber", SqlDbType.VarChar)).Value = customerNumber;
 
             try
             {
@@ -100,5 +100,34 @@ namespace HTCDataAccessLayer
             }
 
         }
+
+        public List<string> GetCustomerDetailUsingNumber(string customerNumber)
+        {
+            List<string> lstCustomer = new List<string>();
+            try
+            {
+                sqlConObj = new SqlConnection(ConfigurationManager.ConnectionStrings["connString"].ToString());
+                cmdObj = new SqlCommand($@"SELECT customerName,customerNumber,customerAddress, customerVisitCount FROM Customer where customerNumber='{customerNumber}'", sqlConObj);
+                sqlConObj.Open();
+                drCustomer = cmdObj.ExecuteReader();
+
+                drCustomer.Read();
+
+                lstCustomer.Add(drCustomer["customerName"] + "  " + drCustomer["customerNumber"] + "  " + drCustomer["customerAddress"] + " " + drCustomer["customerVisitCount"]);
+
+                return lstCustomer;
+            }
+            catch (Exception)
+            {
+                lstCustomer.Add("Something went wrong");
+                return lstCustomer;
+            }
+            finally
+            {
+                sqlConObj.Close();
+            }
+
+        }
+
     }
 }

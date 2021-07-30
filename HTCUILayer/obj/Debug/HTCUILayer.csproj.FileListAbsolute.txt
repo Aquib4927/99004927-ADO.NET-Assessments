@@ -1,2 +1,10 @@
 G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\obj\Debug\HTCUILayer.csproj.AssemblyReference.cache
 G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\obj\Debug\HTCUILayer.csproj.CoreCompileInputs.cache
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\bin\Debug\HTCUILayer.exe.config
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\bin\Debug\HTCUILayer.exe
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\bin\Debug\HTCUILayer.pdb
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\bin\Debug\HTCDataAccessLayer.dll
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\bin\Debug\HTCDataAccessLayer.pdb
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\obj\Debug\HTCUILayer.csproj.CopyComplete
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\obj\Debug\HTCUILayer.exe
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\obj\Debug\HTCUILayer.pdb

@@ -13,8 +13,17 @@ namespace HTCUILayer
         {
             Menu menu = new Menu();
             Customer cusObj = new Customer();
-            menu.AddItem("F1000", "Noodles", "Chinese Food", 0, 200, 0);
-            cusObj.AddCustomer("Aquib Jawed", 8757550099,"Bangalore,India",1);
+            Console.Clear();
+            //Console.WriteLine(menu.DeleteItem("F1001"));
+            //Console.WriteLine(cusObj.AddCustomer("Aquib Jawed", "7004632163", "Bangalore,India",1));
+           
+            List<string> list = cusObj.GetCustomerDetailUsingNumber("7004632163");
+
+            foreach(var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
         }
     }
 }

@@ -14,6 +14,7 @@ namespace HTCDataAccessLayer
     {
         SqlConnection sqlConObj;
         SqlCommand cmdObj;
+        SqlDataReader drMenu;
 
         public string AddItem(string itemId, string itemName, string itemDescription,
                               int itemTax, int itemPrice, int itemDiscount)
@@ -97,6 +98,38 @@ namespace HTCDataAccessLayer
             {
                 //throw ex.Message();
                 return "Something Went Wrong!!";
+
+            }
+            finally
+            {
+                sqlConObj.Close();
+            }
+
+        }
+
+        public List<string> GetMenu()
+        {
+            List<string> lstMenu = new List<string>();
+
+            try
+            {
+                sqlConObj = new SqlConnection(ConfigurationManager.ConnectionStrings["connString"].ToString());
+                cmdObj = new SqlCommand(@"SELECT itemName,itemPrice FROM MENU", sqlConObj);
+                sqlConObj.Open();
+                drMenu = cmdObj.ExecuteReader();
+
+                while (drMenu.Read())
+                {
+                    lstMenu.Add(drMenu["itemName"] + "  " + drMenu["itemPrice"]);
+                }
+
+                return lstMenu;
+            }
+            catch (Exception)
+            {
+                lstMenu.Add("Something went wrong Error code -99");
+                return lstMenu;
+
 
             }
             finally
