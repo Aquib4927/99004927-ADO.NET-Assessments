@@ -1,0 +1,2 @@
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\obj\Debug\HTCUILayer.csproj.AssemblyReference.cache
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCUILayer\obj\Debug\HTCUILayer.csproj.CoreCompileInputs.cache

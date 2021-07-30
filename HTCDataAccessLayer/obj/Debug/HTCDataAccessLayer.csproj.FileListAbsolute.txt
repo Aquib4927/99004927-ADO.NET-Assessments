@@ -1,0 +1,6 @@
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCDataAccessLayer\bin\Debug\HTCDataAccessLayer.dll
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCDataAccessLayer\bin\Debug\HTCDataAccessLayer.pdb
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCDataAccessLayer\obj\Debug\HTCDataAccessLayer.csproj.AssemblyReference.cache
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCDataAccessLayer\obj\Debug\HTCDataAccessLayer.csproj.CoreCompileInputs.cache
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCDataAccessLayer\obj\Debug\HTCDataAccessLayer.dll
+G:\Genesis_Internship\MS-SQL_Assessment2\HTCDataAccessLayer\obj\Debug\HTCDataAccessLayer.pdb

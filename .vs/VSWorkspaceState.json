@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\HTCBusinessLayer",
+    "\\HTCDataAccessLayer",
+    "\\HTCDTO",
+    "\\HTCUILayer"
+  ],
+  "SelectedNode": "\\HTCDataAccessLayer\\Customer.cs",
+  "PreviewInSolutionExplorer": false
+}
